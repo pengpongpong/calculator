@@ -1,3 +1,13 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background: linear-gradient(45deg, #E3FDFD, #71C9CE 70%);
+}
+
 .container {
   display: flex;
   justify-content: center;
@@ -7,35 +17,56 @@
 }
 
 .calculator {
-  width: 20vw;
-  height: 50vh;
-  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+  height: 432px;
+  border: 2px solid black;
+  box-shadow: 2px 2px 2px 5px #2e3238;
 }
 
 .topDisplay, .bottomDisplay {
   width: 100%;
-  border: 1px solid red;
+  height: 15%;
+  background-color: #808998;
+  color: #EEEEEE;
+  font-size: 130%;
+}
+.topDisplay p, .bottomDisplay p {
+  padding: 5px;
+}
+
+.bottomDisplay {
+  border-top: 1px solid black;
 }
 
 .buttonCollection {
   display: flex;
   flex-wrap: wrap;
-  width: 20vw;
-  height: 20vh;
-  border: 1px solid blue;
+  width: 100%;
+  height: 60%;
 }
 
-.number {
-  width: 50px;
-  height: 50px;
+.number, .operator {
+  width: 69px;
+  height: 60px;
+  text-transform: uppercase;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 150%;
+  font-style: italic;
+  background-color: #393E46;
+  color: #EEEEEE;
+}
+
+.ac {
+  width: 207px;
+}
+
+.equal {
+  width: 138px;
 }
 
 .operator {
-  width: 50px;
-  height: 50px;
-  border: 1px solid yellow;
-}
-
-.one {
-  color: red;
+  background-color: #505762;
 }/*# sourceMappingURL=index.css.map */

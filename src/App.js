@@ -2,6 +2,17 @@ import './index.css';
 import React from "react"
 
 const buttonHolder = [
+
+  {
+    class: "operator ac",
+    onClick: "ac",
+    id: "ac"
+  },
+  {
+    class: "operator multi",
+    onClick: "multiOps",
+    id: "*"
+  },
   {
     class: "number one",
     onClick: 1,
@@ -16,6 +27,11 @@ const buttonHolder = [
     class: "number three",
     onClick: 3,
     id: "3"
+  },
+  {
+    class: "operator div",
+    onClick: "divOps",
+    id: "/"
   },
   {
     class: "number four",
@@ -33,6 +49,11 @@ const buttonHolder = [
     id: "6"
   },
   {
+    class: "operator minus",
+    onClick: "minusOps",
+    id: "-"
+  },
+  {
     class: "number seven",
     onClick: 7,
     id: "7"
@@ -48,34 +69,14 @@ const buttonHolder = [
     id: "9"
   },
   {
-    class: "number zero",
-    onClick: 0,
-    id: "0"
-  },
-  {
-    class: "operator ac",
-    onClick: "ac",
-    id: "ac"
-  },
-  {
     class: "operator add",
     onClick: "plusOps",
     id: "+"
   },
   {
-    class: "operator minus",
-    onClick: "minusOps",
-    id: "-"
-  },
-  {
-    class: "operator multi",
-    onClick: "multiOps",
-    id: "*"
-  },
-  {
-    class: "operator div",
-    onClick: "divOps",
-    id: "/"
+    class: "number zero",
+    onClick: 0,
+    id: "0"
   },
   {
     class: "number comma",
@@ -139,21 +140,17 @@ function calculationOps (arr, multiOps, divOps, plusOps, minusOps) {
     let firstOperand = arr[multiOpsIndex - 1];
       let secondOperand = arr[multiOpsIndex + 1];
       let ops = "multiOps";
-      console.log(firstOperand, "firstoperand");
-      console.log(secondOperand, "secondOperand")
       tempRes = calcOp(firstOperand, secondOperand, ops);
       // check if index is at the end of array
       if ((multiOpsIndex + 1) === (arr.length -1)) {
         tempArr = arr.slice(0, (multiOpsIndex - 1));
         tempArr.push(tempRes);
-        console.log(tempArr, "tempArr End")
         return findIndex(tempArr);
       }
       // check if index is at the beginning of array
       if (multiOpsIndex === 1) {
         tempArr = arr.slice(multiOpsIndex + 2);
         tempArr.unshift(tempRes);
-        console.log(tempArr, "tempArr beginnign")
         return findIndex(tempArr);
       }
       // check if index is at the middle of array
@@ -163,7 +160,6 @@ function calculationOps (arr, multiOps, divOps, plusOps, minusOps) {
         tempArr.push(tempRes);
         tempArr.push(tempArrEnd);
         tempArr = tempArr.flat();
-        console.log(tempArr, "tempArr middle")
         return findIndex(tempArr);
       }
   }
@@ -171,8 +167,6 @@ function calculationOps (arr, multiOps, divOps, plusOps, minusOps) {
     let firstOperand = arr[divOpsIndex - 1];
       let secondOperand = arr[divOpsIndex + 1];
       let ops = "divOps";
-      console.log(firstOperand, "firstoperand");
-      console.log(secondOperand, "secondOperand")
       tempRes = calcOp(firstOperand, secondOperand, ops);
       // check if index is at the end of array
       if ((divOpsIndex + 1) === (arr.length -1)) {
@@ -200,21 +194,17 @@ function calculationOps (arr, multiOps, divOps, plusOps, minusOps) {
     let firstOperand = arr[multiOpsIndex - 1];
       let secondOperand = arr[multiOpsIndex + 1];
       let ops = "multiOps";
-      console.log(firstOperand, "firstoperand");
-      console.log(secondOperand, "secondOperand")
       tempRes = calcOp(firstOperand, secondOperand, ops);
       // check if index is at the end of array
       if ((multiOpsIndex + 1) === (arr.length -1)) {
         tempArr = arr.slice(0, (multiOpsIndex - 1));
         tempArr.push(tempRes);
-        console.log(tempArr, "tempArr End")
         return findIndex(tempArr);
       }
       // check if index is at the beginning of array
       if (multiOpsIndex === 1) {
         tempArr = arr.slice(multiOpsIndex + 2);
         tempArr.unshift(tempRes);
-        console.log(tempArr, "tempArr beginnign")
         return findIndex(tempArr);
       }
       // check if index is at the middle of array
@@ -224,7 +214,6 @@ function calculationOps (arr, multiOps, divOps, plusOps, minusOps) {
         tempArr.push(tempRes);
         tempArr.push(tempArrEnd);
         tempArr = tempArr.flat();
-        console.log(tempArr, "tempArr middle")
         return findIndex(tempArr);
       }
   }
@@ -232,8 +221,6 @@ function calculationOps (arr, multiOps, divOps, plusOps, minusOps) {
     let firstOperand = arr[divOpsIndex - 1];
     let secondOperand = arr[divOpsIndex + 1];
     let ops = "divOps";
-    console.log(firstOperand, "firstoperand");
-    console.log(secondOperand, "secondOperand")
     tempRes = calcOp(firstOperand, secondOperand, ops);
     // check if index is at the end of array
     if ((divOpsIndex + 1) === (arr.length -1)) {
@@ -261,8 +248,6 @@ function calculationOps (arr, multiOps, divOps, plusOps, minusOps) {
     let firstOperand = arr[plusOpsIndex - 1];
     let secondOperand = arr[plusOpsIndex + 1];
     let ops = "plusOps";
-    console.log(firstOperand, "firstoperand");
-    console.log(secondOperand, "secondOperand")
     tempRes = calcOp(firstOperand, secondOperand, ops);
     // check if index is at the end of array
     if ((plusOpsIndex + 1) === (arr.length -1)) {
@@ -290,8 +275,6 @@ function calculationOps (arr, multiOps, divOps, plusOps, minusOps) {
     let firstOperand = arr[minusOpsIndex - 1];
     let secondOperand = arr[minusOpsIndex + 1];
     let ops = "minusOps";
-    console.log(firstOperand, "firstoperand");
-    console.log(secondOperand, "secondOperand")
     tempRes = calcOp(firstOperand, secondOperand, ops);
     // check if index is at the end of array
     if ((minusOpsIndex + 1) === (arr.length -1)) {
@@ -319,8 +302,6 @@ function calculationOps (arr, multiOps, divOps, plusOps, minusOps) {
     let firstOperand = arr[plusOpsIndex - 1];
     let secondOperand = arr[plusOpsIndex + 1];
     let ops = "plusOps";
-    console.log(firstOperand, "firstoperand");
-    console.log(secondOperand, "secondOperand")
     tempRes = calcOp(firstOperand, secondOperand, ops);
     // check if index is at the end of array
     if ((plusOpsIndex + 1) === (arr.length -1)) {
@@ -348,8 +329,6 @@ function calculationOps (arr, multiOps, divOps, plusOps, minusOps) {
     let firstOperand = arr[minusOpsIndex - 1];
     let secondOperand = arr[minusOpsIndex + 1];
     let ops = "minusOps";
-    console.log(firstOperand, "firstoperand");
-    console.log(secondOperand, "secondOperand")
     tempRes = calcOp(firstOperand, secondOperand, ops);
     // check if index is at the end of array
     if ((minusOpsIndex + 1) === (arr.length -1)) {
@@ -668,9 +647,7 @@ class App extends React.Component {
           // fallback in case a number is still on display to be added for calculations
         }), () => {
           let tempRes = this.state.tempCalc.slice(0, this.state.tempCalc.length - 1);
-          console.log(tempRes, "tempRes")
           let tempResult = findIndex(tempRes);
-          console.log(tempResult, "tempResult")
           tempResult = Number(tempResult);
           this.handleDisplayView();
           this.setState({
@@ -1184,17 +1161,16 @@ class App extends React.Component {
       <div className="container">
         <div className="calculator">
           <div className="topDisplay">
-            <p>displayViewState: {this.state.displayView}</p>
+            <p>{this.state.displayView}</p>
           </div>
           <div className="bottomDisplay">
-            <p>display: {this.state.display}</p>
+            <p>{this.state.display}</p>
           </div>
             <ButtonCollection
               showDisplay={this.display}
               showOps={this.handleTempCalc}
             />          
         </div>
-        <p>{console.log(this.state.tempCalc)}</p>  
       </div>
     )
   }
