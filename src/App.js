@@ -353,6 +353,7 @@ function calculationOps (arr, multiOps, divOps, plusOps, minusOps) {
     }
   }
 }
+
 // button component
 class Button extends React.Component {
   constructor(props) {
@@ -375,6 +376,7 @@ class Button extends React.Component {
     )
   }
 };
+
 // all buttons in a container
 class ButtonCollection extends React.Component {
   // constructor(props) {
@@ -1169,8 +1171,9 @@ class App extends React.Component {
             <ButtonCollection
               showDisplay={this.display}
               showOps={this.handleTempCalc}
-            />          
+            />             
         </div>
+        {/* <p className="author">by pengpenpong</p>   */}
       </div>
     )
   }
